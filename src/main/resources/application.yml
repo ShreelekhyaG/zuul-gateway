@@ -5,7 +5,7 @@ server:
     port: 8080
 zuul:
     routes:
-        movie-service:
+        movie-service2:
             url: http://localhost:8090
 #eureka:         #tells about the Eureka server details and its refresh time
 #    instance:
