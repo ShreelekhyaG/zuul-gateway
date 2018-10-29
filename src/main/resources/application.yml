@@ -2,7 +2,16 @@ ribbon:
     eureka:
         enabled: false
 server:
-    port: 8080
+    port: 8441
+    ssl:
+      key-store-type: PKCS12
+      key-store: classpath:tyb433keystore.p12
+      key-store-password: 12345678
+      key-alias: tomcat
+management:
+    security:
+        enabled: false  #disable the spring security on the management endpoints like /env, /refresh etc.
+        require-ssl: true
 zuul:
     routes:
         movie-service2:
@@ -18,9 +27,6 @@ zuul:
 #            enabled: true
 #        lease:
 #            duration: 5
-management:
-    security:
-        enabled: false  #disable the spring security on the management endpoints like /env, /refresh etc.
 
 logging:
     level:
